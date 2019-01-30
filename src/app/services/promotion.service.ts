@@ -8,14 +8,14 @@ export class PromotionService {
   constructor() { }
 
   getPromotions(): Promotion[] {
-    return PROMOTIONS;
+    return Promise.resolve(PROMOTIONS);
   }
 
   getPromotion(id: number): Promotion {
-    return PROMOTIONS.filter((promo) => (promo.id === id))[0];
+    return Promise.resolve((promo) => (promo.id === id))[0];
   }
 
   getFeaturedPromotion(): Promotion {
-    return PROMOTIONS.filter((promotion) => promotion.featured)[0];
+    return Promise.resolve((promotion) => promotion.featured)[0];
   }
 }
